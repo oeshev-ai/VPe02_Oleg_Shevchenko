@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask Docker Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Flask Docker Demo</h1>
+      <p>Фронтенд ходит к бэкенду по внутренней сети Docker Compose (<code>/api → backend:5000</code>)</p>
+    </header>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Статус бэкенда</h2>
+        <button type="button" id="btn-refresh" class="btn">Обновить</button>
+      </div>
+      <div class="grid">
+        <article>
+          <h3>GET /</h3>
+          <pre id="out-root">загрузка…</pre>
+        </article>
+        <article>
+          <h3>GET /info</h3>
+          <pre id="out-info">загрузка…</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Калькулятор · GET /calc/&lt;a&gt;/&lt;b&gt;</h2>
+      <form id="calc-form" class="calc-form">
+        <label>
+          a
+          <input type="number" name="a" value="10" required>
+        </label>
+        <label>
+          b
+          <input type="number" name="b" value="3" required>
+        </label>
+        <button type="submit" class="btn">Посчитать</button>
+      </form>
+      <pre id="out-calc">результат появится здесь</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

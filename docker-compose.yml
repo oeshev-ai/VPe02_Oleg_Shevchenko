@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: .
+    container_name: flask-backend
+    expose:
+      - "5000"
+    # Порт наружу опционален — для прямых curl к Flask
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    container_name: flask-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
